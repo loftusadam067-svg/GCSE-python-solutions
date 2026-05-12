@@ -1,32 +1,21 @@
 # Year:        2022
 # Question:    Q5(c)(ii)
 # Marks:       3
-# Description: Uses the newPrice() function to calculate and output the total
-#              cost of staying in a Premium room for 5 nights (£400).
+# Description: Uses newPrice() to output the cost of a Premium room for 5 nights.
 
 
 def newPrice(nights, room):
-    """
-    Calculate the total price for a hotel stay.
-
-    Parameters:
-        nights (int): Number of nights the guest is staying.
-        room (str):   Room type — either "basic" or "premium".
-
-    Returns:
-        int: Total price in pounds for the full stay.
-    """
-    # Rate depends on room type; premium costs more per night than basic
+    # Work out the nightly rate based on the room type
     if room == "basic":
         rate = 60
     else:
         rate = 80
 
-    return nights * rate
+    total = nights * rate
+    return total
 
 
 # --- Output ---
-# The question specifies exact values (Premium, 5 nights), so they are passed
-# directly to newPrice() rather than prompting the user for input
+# Call newPrice() with the values given in the question and display the result
 price = newPrice(5, "premium")
 print("The price of staying in a Premium room for 5 nights is £" + str(price))
