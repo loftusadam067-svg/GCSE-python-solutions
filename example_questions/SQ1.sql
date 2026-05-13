@@ -1,0 +1,23 @@
+-- Topic:  SQL SELECT with WHERE (single condition)
+-- Marks:  3
+--
+-- A leisure centre stores member details in a database table called TblMembers.
+--
+-- TblMembers
+-- +----------+-----------+---------+----------------+
+-- | MemberID | FullName  | Age     | MembershipType |
+-- +----------+-----------+---------+----------------+
+-- | 1        | Jo Patel  | 34      | Gold           |
+-- | 2        | Sam Reid  | 22      | Silver         |
+-- | 3        | Kim Obi   | 41      | Gold           |
+-- | 4        | Lee Shah  | 19      | Bronze         |
+-- +----------+-----------+---------+----------------+
+--
+-- Write a SELECT statement to return all fields from TblMembers
+-- where the MembershipType is "Gold".
+--
+-- Expected output:
+--   1 | Jo Patel | 34 | Gold
+--   3 | Kim Obi  | 41 | Gold
+
+-- Write your SQL query below:
