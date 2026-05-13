@@ -1,0 +1,29 @@
+-- Topic:  SQL SELECT with GROUP BY and HAVING
+-- Marks:  6
+--
+-- A supermarket stores daily sales records in a database table called TblSales.
+--
+-- TblSales
+-- +--------+-------------+-------+-------+
+-- | SaleID | ProductName | Store | Units |
+-- +--------+-------------+-------+-------+
+-- | 1      | Milk        | North | 50    |
+-- | 2      | Bread       | South | 30    |
+-- | 3      | Milk        | South | 40    |
+-- | 4      | Eggs        | North | 20    |
+-- | 5      | Bread       | North | 45    |
+-- | 6      | Milk        | East  | 35    |
+-- | 7      | Eggs        | South | 25    |
+-- +--------+-------------+-------+-------+
+--
+-- Write a SELECT statement to return each ProductName and the total units
+-- sold across all stores.
+-- Use TotalUnits as the alias for the sum.
+-- Only include products where TotalUnits is greater than 60.
+-- Order the results by TotalUnits in descending order.
+--
+-- Expected output (in order):
+--   Milk  | 125
+--   Bread | 75
+
+-- Write your SQL query below:

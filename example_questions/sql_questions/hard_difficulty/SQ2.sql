@@ -1,0 +1,34 @@
+-- Topic:  SQL INNER JOIN
+-- Marks:  6
+--
+-- An online shop uses two tables: TblCustomers and TblOrders.
+--
+-- TblCustomers
+-- +------------+--------------+---------+
+-- | CustomerID | FullName     | City    |
+-- +------------+--------------+---------+
+-- | C01        | Alice Brown  | London  |
+-- | C02        | Ben Clarke   | Leeds   |
+-- | C03        | Carol Dean   | London  |
+-- | C04        | Dan Evans    | Bristol |
+-- +------------+--------------+---------+
+--
+-- TblOrders
+-- +---------+------------+-------+------------+
+-- | OrderID | CustomerID | Total | Status     |
+-- +---------+------------+-------+------------+
+-- | 1001    | C01        | 150   | Dispatched |
+-- | 1002    | C02        | 45    | Pending    |
+-- | 1003    | C01        | 200   | Dispatched |
+-- | 1004    | C03        | 90    | Pending    |
+-- +---------+------------+-------+------------+
+--
+-- Write a SELECT statement to return the FullName, OrderID, and Total
+-- for all orders where Status is "Dispatched".
+-- Use an INNER JOIN to link TblCustomers and TblOrders.
+--
+-- Expected output:
+--   Alice Brown | 1001 | 150
+--   Alice Brown | 1003 | 200
+
+-- Write your SQL query below:

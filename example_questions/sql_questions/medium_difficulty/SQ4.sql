@@ -1,0 +1,26 @@
+-- Topic:  SQL SELECT with multiple conditions and ORDER BY DESC
+-- Marks:  5
+--
+-- A recruitment agency stores applicant details in a database table
+-- called TblApplicants.
+--
+-- TblApplicants
+-- +-------------+------------+------------------+-------+
+-- | ApplicantID | FullName   | Role             | Score |
+-- +-------------+------------+------------------+-------+
+-- | 1           | Grace Hill | Software Dev     | 88    |
+-- | 2           | Harry King | Data Analyst     | 74    |
+-- | 3           | Isla Long  | Software Dev     | 91    |
+-- | 4           | Jake Marsh | Software Dev     | 65    |
+-- | 5           | Karen Noon | Data Analyst     | 82    |
+-- +-------------+------------+------------------+-------+
+--
+-- Write a SELECT statement to return only the FullName and Score
+-- from TblApplicants where Role is "Software Dev" AND Score is
+-- greater than or equal to 80, ordered by Score in descending order.
+--
+-- Expected output (in order):
+--   Isla Long  | 91
+--   Grace Hill | 88
+
+-- Write your SQL query below:

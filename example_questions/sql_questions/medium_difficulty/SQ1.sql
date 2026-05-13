@@ -1,0 +1,25 @@
+-- Topic:  SQL SELECT with WHERE and OR
+-- Marks:  4
+--
+-- A school stores student details in a database table called TblStudents.
+--
+-- TblStudents
+-- +-----------+-----------+------+-------+
+-- | StudentID | FullName  | Year | House |
+-- +-----------+-----------+------+-------+
+-- | 1         | Amy Nash  | 7    | Red   |
+-- | 2         | Ben Cole  | 9    | Blue  |
+-- | 3         | Cara Hunt | 7    | Blue  |
+-- | 4         | Dan Fox   | 8    | Green |
+-- | 5         | Ella May  | 9    | Red   |
+-- +-----------+-----------+------+-------+
+--
+-- Write a SELECT statement to return all fields from TblStudents
+-- where the House is "Red" OR the Year is 9.
+--
+-- Expected output:
+--   1 | Amy Nash | 7 | Red
+--   2 | Ben Cole | 9 | Blue
+--   5 | Ella May | 9 | Red
+
+-- Write your SQL query below:

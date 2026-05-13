@@ -1,0 +1,25 @@
+-- Topic:  SQL SELECT with COUNT aggregate
+-- Marks:  5
+--
+-- A cinema stores screening details in a database table called TblScreenings.
+--
+-- TblScreenings
+-- +-------------+-----------------+------+----------+----------+
+-- | ScreeningID | FilmTitle       | Hall | ShowTime | Capacity |
+-- +-------------+-----------------+------+----------+----------+
+-- | 1           | Space Adventure | A    | 14:00    | 120      |
+-- | 2           | The Lost City   | B    | 14:30    | 80       |
+-- | 3           | Space Adventure | B    | 17:00    | 80       |
+-- | 4           | Night Patrol    | A    | 19:00    | 120      |
+-- | 5           | The Lost City   | A    | 20:00    | 120      |
+-- +-------------+-----------------+------+----------+----------+
+--
+-- Write a SELECT statement to return the total number of screenings
+-- in Hall "A".
+-- Use TotalScreenings as the alias for your count.
+--
+-- Expected output:
+--   TotalScreenings
+--   3
+
+-- Write your SQL query below:

@@ -1,0 +1,28 @@
+-- Topic:  SQL SELECT with GROUP BY and COUNT
+-- Marks:  5
+--
+-- A school stores lesson details in a database table called TblLessons.
+--
+-- TblLessons
+-- +----------+---------+-----------+------+
+-- | LessonID | Subject | TeacherID | Year |
+-- +----------+---------+-----------+------+
+-- | 1        | Maths   | T01       | 10   |
+-- | 2        | Science | T02       | 11   |
+-- | 3        | Maths   | T01       | 11   |
+-- | 4        | English | T03       | 10   |
+-- | 5        | Science | T02       | 10   |
+-- | 6        | Maths   | T04       | 10   |
+-- +----------+---------+-----------+------+
+--
+-- Write a SELECT statement to return each Subject and the number of
+-- lessons for that subject.
+-- Use LessonCount as the alias for the count.
+-- Order the results by LessonCount in descending order.
+--
+-- Expected output (in order):
+--   Maths   | 3
+--   Science | 2
+--   English | 1
+
+-- Write your SQL query below:
