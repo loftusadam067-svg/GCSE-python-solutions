@@ -1,0 +1,27 @@
+-- Topic:  SQL SELECT specific fields with WHERE range condition and ORDER BY ASC
+-- Marks:  5
+--
+-- A supermarket stores product details in a database table called TblProducts.
+--
+-- TblProducts
+-- +-----------+------------------------+----------+-------+-------+
+-- | ProductID | ProductName            | Category | Price | Stock |
+-- +-----------+------------------------+----------+-------+-------+
+-- | 1         | Whole Milk             | Dairy    | 1.10  | 200   |
+-- | 2         | Cheddar Cheese         | Dairy    | 2.50  | 80    |
+-- | 3         | White Bread            | Bakery   | 1.20  | 150   |
+-- | 4         | Greek Yoghurt          | Dairy    | 1.80  | 60    |
+-- | 5         | Sourdough Loaf         | Bakery   | 2.20  | 40    |
+-- | 6         | Butter                 | Dairy    | 1.55  | 90    |
+-- +-----------+------------------------+----------+-------+-------+
+--
+-- Write a SELECT statement to return only the ProductName and Price
+-- from TblProducts where Category is "Dairy" AND Price is greater than 1.00
+-- AND Price is less than 2.00, ordered by Price in ascending order.
+--
+-- Expected output (in order):
+--   Whole Milk   | 1.10
+--   Butter       | 1.55
+--   Greek Yoghurt| 1.80
+
+-- Write your SQL query below:

@@ -1,0 +1,26 @@
+-- Topic:  SQL SELECT with WHERE and four AND conditions
+-- Marks:  5
+--
+-- A hospital stores patient appointment records in a table called TblAppointments.
+--
+-- TblAppointments
+-- +-------+-----------------+------+---------+--------+---------+
+-- | AptID | PatientName     | Ward | Year    | Urgent | Checked |
+-- +-------+-----------------+------+---------+--------+---------+
+-- | 1     | Alice Nash      | A    | 2024    | No     | Yes     |
+-- | 2     | Ben Obi         | B    | 2024    | Yes    | No      |
+-- | 3     | Carol Park      | A    | 2023    | No     | Yes     |
+-- | 4     | Dan Reid        | A    | 2024    | No     | No      |
+-- | 5     | Eve Stone       | A    | 2024    | No     | Yes     |
+-- | 6     | Fred Turner     | B    | 2024    | No     | Yes     |
+-- +-------+-----------------+------+---------+--------+---------+
+--
+-- Write a SELECT statement to return all fields from TblAppointments
+-- where Ward is "A" AND Year is 2024 AND Urgent is "No"
+-- AND Checked is "Yes".
+--
+-- Expected output:
+--   1 | Alice Nash | A | 2024 | No | Yes
+--   5 | Eve Stone  | A | 2024 | No | Yes
+
+-- Write your SQL query below:

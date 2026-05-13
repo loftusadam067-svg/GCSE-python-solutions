@@ -1,0 +1,25 @@
+-- Topic:  SQL SELECT with WHERE and three AND conditions
+-- Marks:  4
+--
+-- A school stores student details in a database table called TblStudents.
+--
+-- TblStudents
+-- +-----------+-----------+------+-------+--------+
+-- | StudentID | FullName  | Year | House | Active |
+-- +-----------+-----------+------+-------+--------+
+-- | 1         | Amy Nash  | 10   | Red   | Yes    |
+-- | 2         | Ben Cole  | 11   | Blue  | Yes    |
+-- | 3         | Cara Hunt | 10   | Red   | No     |
+-- | 4         | Dan Fox   | 10   | Red   | Yes    |
+-- | 5         | Ella May  | 11   | Red   | Yes    |
+-- | 6         | Fred Hope | 10   | Blue  | Yes    |
+-- +-----------+-----------+------+-------+--------+
+--
+-- Write a SELECT statement to return all fields from TblStudents
+-- where Year is 10 AND House is "Red" AND Active is "Yes".
+--
+-- Expected output:
+--   1 | Amy Nash | 10 | Red | Yes
+--   4 | Dan Fox  | 10 | Red | Yes
+
+-- Write your SQL query below:

@@ -1,0 +1,27 @@
+-- Topic:  SQL SELECT specific fields with WHERE, multiple conditions, and ORDER BY ASC
+-- Marks:  5
+--
+-- A recruitment agency stores applicant records in a table called TblApplicants.
+--
+-- TblApplicants
+-- +------+---------------+------------------+-------+--------+-----------+
+-- | AID  | FullName      | Role             | Score | Stage  | Available |
+-- +------+---------------+------------------+-------+--------+-----------+
+-- | 1    | Grace Hill    | Software Dev     | 88    | Final  | Yes       |
+-- | 2    | Harry King    | Data Analyst     | 74    | Review | Yes       |
+-- | 3    | Isla Long     | Software Dev     | 91    | Final  | Yes       |
+-- | 4    | Jake Marsh    | Software Dev     | 65    | Review | No        |
+-- | 5    | Karen Noon    | Software Dev     | 82    | Final  | Yes       |
+-- | 6    | Leo Orr       | Data Analyst     | 90    | Final  | Yes       |
+-- +------+---------------+------------------+-------+--------+-----------+
+--
+-- Write a SELECT statement to return only the FullName and Score
+-- from TblApplicants where Role is "Software Dev" AND Stage is "Final"
+-- AND Score is greater than or equal to 85 AND Available is "Yes",
+-- ordered by Score in ascending order.
+--
+-- Expected output (in order):
+--   Grace Hill | 88
+--   Isla Long  | 91
+
+-- Write your SQL query below:

@@ -1,0 +1,28 @@
+-- Topic:  SQL SELECT with WHERE AND and ORDER BY ASC
+-- Marks:  4
+--
+-- A sports club stores race results in a database table called TblResults.
+--
+-- TblResults
+-- +----------+-------------+-------+------+
+-- | ResultID | RunnerName  | Event | Time |
+-- +----------+-------------+-------+------+
+-- | 1        | Alice Park  | 100m  | 13   |
+-- | 2        | Beth Quinn  | 200m  | 28   |
+-- | 3        | Cara Reed   | 100m  | 12   |
+-- | 4        | Dana Shaw   | 100m  | 14   |
+-- | 5        | Eva Todd    | 200m  | 27   |
+-- | 6        | Fran Upton  | 100m  | 11   |
+-- +----------+-------------+-------+------+
+-- Time is stored in seconds.
+--
+-- Write a SELECT statement to return only the RunnerName and Time
+-- from TblResults where Event is "100m" AND Time is less than 14,
+-- ordered by Time in ascending order.
+--
+-- Expected output (in order):
+--   Fran Upton | 11
+--   Cara Reed  | 12
+--   Alice Park | 13
+
+-- Write your SQL query below:

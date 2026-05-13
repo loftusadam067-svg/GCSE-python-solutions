@@ -1,0 +1,26 @@
+-- Topic:  SQL SELECT specific fields with WHERE, three conditions, and ORDER BY ASC
+-- Marks:  5
+--
+-- A library stores book loan records in a database table called TblLoans.
+--
+-- TblLoans
+-- +--------+---------------+-----------+------+----------+
+-- | LoanID | BorrowerName  | Section   | Year | Returned |
+-- +--------+---------------+-----------+------+----------+
+-- | 1      | Joe Adams     | Fiction   | 2023 | Yes      |
+-- | 2      | Kim Brook     | Non-Fiction| 2024 | No       |
+-- | 3      | Lee Chen      | Fiction   | 2024 | No       |
+-- | 4      | Mia Drew      | Fiction   | 2024 | No       |
+-- | 5      | Nat Evans     | Fiction   | 2023 | No       |
+-- | 6      | Oli Ford      | Non-Fiction| 2024 | No       |
+-- +--------+---------------+-----------+------+----------+
+--
+-- Write a SELECT statement to return only the BorrowerName and LoanID
+-- from TblLoans where Section is "Fiction" AND Year is 2024
+-- AND Returned is "No", ordered by BorrowerName in ascending order.
+--
+-- Expected output (in order):
+--   Lee Chen | 3
+--   Mia Drew | 4
+
+-- Write your SQL query below:

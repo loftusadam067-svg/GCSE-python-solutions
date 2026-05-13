@@ -1,0 +1,25 @@
+-- Topic:  SQL SELECT with WHERE using AND and a numerical comparison
+-- Marks:  4
+--
+-- A hotel stores reservation details in a database table called TblReservations.
+--
+-- TblReservations
+-- +-------+-------------+-----------+--------+
+-- | ResID | GuestName   | RoomType  | Nights |
+-- +-------+-------------+-----------+--------+
+-- | 1     | Anna Green  | Standard  | 2      |
+-- | 2     | Ben Hall    | Deluxe    | 5      |
+-- | 3     | Cara Irving | Standard  | 1      |
+-- | 4     | Dan Jones   | Deluxe    | 3      |
+-- | 5     | Eve King    | Suite     | 7      |
+-- | 6     | Fred Lee    | Deluxe    | 4      |
+-- +-------+-------------+-----------+--------+
+--
+-- Write a SELECT statement to return only the GuestName and Nights
+-- from TblReservations where RoomType is "Deluxe" AND Nights is greater than 3.
+--
+-- Expected output:
+--   Ben Hall | 5
+--   Fred Lee | 4
+
+-- Write your SQL query below:
