@@ -1,34 +1,27 @@
--- Topic:  SQL INNER JOIN
--- Marks:  6
+-- Topic:  SQL SELECT specific fields with WHERE range condition and ORDER BY ASC
+-- Marks:  5
 --
--- An online shop uses two tables: TblCustomers and TblOrders.
+-- A supermarket stores product details in a database table called TblProducts.
 --
--- TblCustomers
--- +------------+--------------+---------+
--- | CustomerID | FullName     | City    |
--- +------------+--------------+---------+
--- | C01        | Alice Brown  | London  |
--- | C02        | Ben Clarke   | Leeds   |
--- | C03        | Carol Dean   | London  |
--- | C04        | Dan Evans    | Bristol |
--- +------------+--------------+---------+
+-- TblProducts
+-- +-----------+------------------------+----------+-------+-------+
+-- | ProductID | ProductName            | Category | Price | Stock |
+-- +-----------+------------------------+----------+-------+-------+
+-- | 1         | Whole Milk             | Dairy    | 1.10  | 200   |
+-- | 2         | Cheddar Cheese         | Dairy    | 2.50  | 80    |
+-- | 3         | White Bread            | Bakery   | 1.20  | 150   |
+-- | 4         | Greek Yoghurt          | Dairy    | 1.80  | 60    |
+-- | 5         | Sourdough Loaf         | Bakery   | 2.20  | 40    |
+-- | 6         | Butter                 | Dairy    | 1.55  | 90    |
+-- +-----------+------------------------+----------+-------+-------+
 --
--- TblOrders
--- +---------+------------+-------+------------+
--- | OrderID | CustomerID | Total | Status     |
--- +---------+------------+-------+------------+
--- | 1001    | C01        | 150   | Dispatched |
--- | 1002    | C02        | 45    | Pending    |
--- | 1003    | C01        | 200   | Dispatched |
--- | 1004    | C03        | 90    | Pending    |
--- +---------+------------+-------+------------+
+-- Write a SELECT statement to return only the ProductName and Price
+-- from TblProducts where Category is "Dairy" AND Price is greater than 1.00
+-- AND Price is less than 2.00, ordered by Price in ascending order.
 --
--- Write a SELECT statement to return the FullName, OrderID, and Total
--- for all orders where Status is "Dispatched".
--- Use an INNER JOIN to link TblCustomers and TblOrders.
---
--- Expected output:
---   Alice Brown | 1001 | 150
---   Alice Brown | 1003 | 200
+-- Expected output (in order):
+--   Whole Milk   | 1.10
+--   Butter       | 1.55
+--   Greek Yoghurt| 1.80
 
 -- Write your SQL query below:

@@ -1,52 +1,48 @@
 # SQL Questions — Hard Difficulty
 
-These questions introduce GROUP BY, HAVING, and INNER JOIN — the most complex SQL features at GCSE level. Each question is worth 5–6 marks and requires combining multiple clauses in the right order.
+These questions use the same keywords as the easy and medium questions — SELECT, FROM, WHERE, AND, ORDER BY ASC — but require you to handle four or more conditions at once, construct range checks, and select the right subset of columns from a wider table. Each question is worth 5 marks.
 
 ## Topics covered
 
-| File  | Topic                                         |
-|-------|-----------------------------------------------|
-| SQ1   | GROUP BY with COUNT and ORDER BY              |
-| SQ2   | INNER JOIN across two tables                  |
-| SQ3   | GROUP BY with SUM and HAVING                  |
+| File  | Topic                                                                       |
+|-------|-----------------------------------------------------------------------------|
+| SQ1   | SELECT with WHERE and four AND conditions                                   |
+| SQ2   | SELECT specific fields with WHERE range condition and ORDER BY ASC          |
+| SQ3   | SELECT specific fields with WHERE, four conditions, and ORDER BY ASC        |
 
 ## How to approach these questions
 
-**GROUP BY (SQ1, SQ3):** Use `GROUP BY` when you need a result *per category* — for example, the number of lessons per subject, or the total units per product. The column you group by must appear in your `SELECT` list. Your aggregate function (`COUNT`, `SUM`, etc.) goes in the `SELECT` too.
+**Read all the conditions before writing anything.** Hard questions combine four or more AND conditions, and it is easy to miss one. Underline or list each condition in the question description before translating it into SQL.
+
+**Four AND conditions (SQ1):** Structure is the same as before — one condition per clause, all joined by AND. Take each condition in turn:
 
 ```sql
-SELECT Subject, COUNT(*) AS LessonCount
-FROM TblLessons
-GROUP BY Subject
-ORDER BY LessonCount DESC;
+WHERE Ward = "A" AND Year = 2024 AND Urgent = "No" AND Checked = "Yes"
 ```
 
-The clause order is: SELECT → FROM → WHERE (optional) → GROUP BY → HAVING (optional) → ORDER BY.
-
-**HAVING vs WHERE (SQ3):** `WHERE` filters individual rows *before* grouping. `HAVING` filters groups *after* grouping, so it can use the result of an aggregate function. If the question says "only include [groups] where the total is greater than X", use `HAVING`:
+**Range conditions (SQ2):** A range ("between X and Y") requires two separate comparisons on the same column, both joined by AND. Do not use BETWEEN — just write the two inequalities:
 
 ```sql
-GROUP BY ProductName
-HAVING SUM(Units) > 60
+WHERE Category = "Dairy" AND Price > 1.00 AND Price < 2.00
 ```
 
-You cannot use `WHERE SUM(Units) > 60` — `WHERE` does not know the group total yet.
+Both comparisons reference the same column (`Price`). This is not a mistake — it is the correct way to express a range.
 
-**INNER JOIN (SQ2):** Use a JOIN when the data you need is spread across two tables. Identify the shared column (the foreign key) and match the tables on it:
+**Combining four conditions with ORDER BY (SQ3):** Build the WHERE clause condition by condition. Once all conditions are in place, add ORDER BY at the end. Double-check that you are ordering by the column the question specifies, which may be different from the columns in your WHERE:
 
 ```sql
-SELECT TblCustomers.FullName, TblOrders.OrderID, TblOrders.Total
-FROM TblOrders
-INNER JOIN TblCustomers ON TblOrders.CustomerID = TblCustomers.CustomerID
-WHERE TblOrders.Status = "Dispatched";
+SELECT FullName, Score
+FROM TblApplicants
+WHERE Role = "Software Dev" AND Stage = "Final" AND Score >= 85 AND Available = "Yes"
+ORDER BY Score ASC;
 ```
 
-Name each column with its table prefix (`TableName.ColumnName`) to avoid ambiguity when both tables have columns with the same name.
+**Checking your expected output:** Count the rows in the sample table that satisfy all your conditions. If your expected output does not match the question's expected output, re-read each condition — one is likely wrong.
 
 ## Common mistakes to avoid
 
-- Using `WHERE` instead of `HAVING` to filter on an aggregate result — `WHERE` cannot see group totals.
-- Including a non-aggregated column in `SELECT` without also putting it in `GROUP BY`.
-- In a JOIN, writing `ON` with the wrong column — both sides of `ON` must refer to the same piece of data (usually an ID).
-- Forgetting table prefixes in a JOIN query when both tables share a column name (e.g. `CustomerID`).
-- Putting `HAVING` before `GROUP BY` — it must come after.
+- Missing one condition from a long AND chain — re-read the description and count the conditions.
+- Writing a range as a single expression (`1.00 < Price < 2.00`) — SQL does not support this; write two separate conditions joined by AND.
+- Putting the equals sign before the comparison operator: `=>` is wrong, `>=` is correct.
+- Sorting by the wrong column — ORDER BY applies to the output, not the filter.
+- Forgetting to select the right columns — re-read which fields the question asks for.

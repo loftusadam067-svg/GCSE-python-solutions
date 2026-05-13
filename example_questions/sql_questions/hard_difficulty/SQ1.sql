@@ -1,28 +1,26 @@
--- Topic:  SQL SELECT with GROUP BY and COUNT
+-- Topic:  SQL SELECT with WHERE and four AND conditions
 -- Marks:  5
 --
--- A school stores lesson details in a database table called TblLessons.
+-- A hospital stores patient appointment records in a table called TblAppointments.
 --
--- TblLessons
--- +----------+---------+-----------+------+
--- | LessonID | Subject | TeacherID | Year |
--- +----------+---------+-----------+------+
--- | 1        | Maths   | T01       | 10   |
--- | 2        | Science | T02       | 11   |
--- | 3        | Maths   | T01       | 11   |
--- | 4        | English | T03       | 10   |
--- | 5        | Science | T02       | 10   |
--- | 6        | Maths   | T04       | 10   |
--- +----------+---------+-----------+------+
+-- TblAppointments
+-- +-------+-----------------+------+---------+--------+---------+
+-- | AptID | PatientName     | Ward | Year    | Urgent | Checked |
+-- +-------+-----------------+------+---------+--------+---------+
+-- | 1     | Alice Nash      | A    | 2024    | No     | Yes     |
+-- | 2     | Ben Obi         | B    | 2024    | Yes    | No      |
+-- | 3     | Carol Park      | A    | 2023    | No     | Yes     |
+-- | 4     | Dan Reid        | A    | 2024    | No     | No      |
+-- | 5     | Eve Stone       | A    | 2024    | No     | Yes     |
+-- | 6     | Fred Turner     | B    | 2024    | No     | Yes     |
+-- +-------+-----------------+------+---------+--------+---------+
 --
--- Write a SELECT statement to return each Subject and the number of
--- lessons for that subject.
--- Use LessonCount as the alias for the count.
--- Order the results by LessonCount in descending order.
+-- Write a SELECT statement to return all fields from TblAppointments
+-- where Ward is "A" AND Year is 2024 AND Urgent is "No"
+-- AND Checked is "Yes".
 --
--- Expected output (in order):
---   Maths   | 3
---   Science | 2
---   English | 1
+-- Expected output:
+--   1 | Alice Nash | A | 2024 | No | Yes
+--   5 | Eve Stone  | A | 2024 | No | Yes
 
 -- Write your SQL query below:

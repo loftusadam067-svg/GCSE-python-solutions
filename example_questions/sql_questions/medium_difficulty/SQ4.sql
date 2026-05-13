@@ -1,26 +1,26 @@
--- Topic:  SQL SELECT with multiple conditions and ORDER BY DESC
+-- Topic:  SQL SELECT specific fields with WHERE, three conditions, and ORDER BY ASC
 -- Marks:  5
 --
--- A recruitment agency stores applicant details in a database table
--- called TblApplicants.
+-- A library stores book loan records in a database table called TblLoans.
 --
--- TblApplicants
--- +-------------+------------+------------------+-------+
--- | ApplicantID | FullName   | Role             | Score |
--- +-------------+------------+------------------+-------+
--- | 1           | Grace Hill | Software Dev     | 88    |
--- | 2           | Harry King | Data Analyst     | 74    |
--- | 3           | Isla Long  | Software Dev     | 91    |
--- | 4           | Jake Marsh | Software Dev     | 65    |
--- | 5           | Karen Noon | Data Analyst     | 82    |
--- +-------------+------------+------------------+-------+
+-- TblLoans
+-- +--------+---------------+-----------+------+----------+
+-- | LoanID | BorrowerName  | Section   | Year | Returned |
+-- +--------+---------------+-----------+------+----------+
+-- | 1      | Joe Adams     | Fiction   | 2023 | Yes      |
+-- | 2      | Kim Brook     | Non-Fiction| 2024 | No       |
+-- | 3      | Lee Chen      | Fiction   | 2024 | No       |
+-- | 4      | Mia Drew      | Fiction   | 2024 | No       |
+-- | 5      | Nat Evans     | Fiction   | 2023 | No       |
+-- | 6      | Oli Ford      | Non-Fiction| 2024 | No       |
+-- +--------+---------------+-----------+------+----------+
 --
--- Write a SELECT statement to return only the FullName and Score
--- from TblApplicants where Role is "Software Dev" AND Score is
--- greater than or equal to 80, ordered by Score in descending order.
+-- Write a SELECT statement to return only the BorrowerName and LoanID
+-- from TblLoans where Section is "Fiction" AND Year is 2024
+-- AND Returned is "No", ordered by BorrowerName in ascending order.
 --
 -- Expected output (in order):
---   Isla Long  | 91
---   Grace Hill | 88
+--   Lee Chen | 3
+--   Mia Drew | 4
 
 -- Write your SQL query below:

@@ -1,21 +1,24 @@
-# Topic:       String processing (character iteration, ord() and chr())
+# Topic:       String processing (character iteration, classification)
 # Marks:       8
-# Description: A simple encryption program uses a Caesar cipher to encode
-#              messages. Each letter is shifted forward by a given number of
-#              positions in the alphabet. Non-letter characters (spaces,
-#              punctuation) are left unchanged.
-#              The cipher wraps around: shifting 'z' by 1 gives 'a'.
-#              The original case of each letter must be preserved.
-#
-#              Write a function called caesarEncrypt that:
-#                - takes two parameters: message (a string) and shift (an int)
-#                - returns the encoded message as a string
-#
-# Note: you may use ord() and chr() in this question.
+# Description: A web application validates new passwords before they are
+#              accepted. Write a function called checkPassword that:
+#                - takes one parameter: password (a string)
+#                - iterates through every character and counts:
+#                    the number of uppercase letters
+#                    the number of digits
+#                  (count these yourself — do not use any built-in count method)
+#                - outputs the counts in the format:
+#                    "Uppercase: X   Digits: Y"
+#                - returns True if ALL of the following are met:
+#                    the password is at least 8 characters long
+#                    it contains at least one uppercase letter
+#                    it contains at least one digit
+#                  returns False otherwise
+#              You do not need to handle user input.
 #
 # Example calls:
-#   caesarEncrypt("hello", 3)   →  "khoor"
-#   caesarEncrypt("xyz", 2)     →  "zab"
-#   caesarEncrypt("Hello!", 1)  →  "Ifmmp!"
+#   checkPassword("Hello123")  → prints "Uppercase: 1   Digits: 3", returns True
+#   checkPassword("hello123")  → prints "Uppercase: 0   Digits: 3", returns False
+#   checkPassword("HELLO")     → prints "Uppercase: 5   Digits: 0", returns False
 
 # Write your solution below:

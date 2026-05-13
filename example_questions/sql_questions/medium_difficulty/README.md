@@ -1,55 +1,48 @@
 # SQL Questions — Medium Difficulty
 
-These questions extend the easy SELECT pattern with new keywords: OR, LIKE, aggregate functions, and combined ordering. Each question is worth 4–5 marks.
+These questions build on the easy SELECT pattern by introducing more conditions in the WHERE clause, numerical comparisons, and ORDER BY ASC. Each question is worth 4–5 marks.
 
 ## Topics covered
 
-| File  | Topic                                                    |
-|-------|----------------------------------------------------------|
-| SQ1   | SELECT with WHERE and OR                                 |
-| SQ2   | SELECT with WHERE and LIKE                               |
-| SQ3   | SELECT with COUNT aggregate                              |
-| SQ4   | SELECT with AND, ORDER BY DESC — two conditions combined |
+| File  | Topic                                                               |
+|-------|---------------------------------------------------------------------|
+| SQ1   | SELECT with WHERE and three AND conditions (all equality)           |
+| SQ2   | SELECT specific fields with WHERE AND and a numerical comparison    |
+| SQ3   | SELECT specific fields with WHERE AND, comparison, and ORDER BY ASC |
+| SQ4   | SELECT specific fields with WHERE, three conditions, and ORDER BY ASC |
 
 ## How to approach these questions
 
-**OR vs AND (SQ1):** `OR` returns a row if *either* condition is true. `AND` requires *both* to be true. If the question says "where X or Y", use `OR`. If it says "where X and Y", use `AND`. Mixing them up is the most common error at this level.
+**More conditions does not mean more complexity — just more care.** You already know AND from the easy questions. Medium questions ask you to use it with three or more conditions, and to mix equality (`=`) with comparison operators (`>`, `<`, `>=`, `<=`).
+
+**Three AND conditions (SQ1):** Write each condition separately, joined by AND. The order you write the conditions does not affect the result, but be precise — every condition must be met:
 
 ```sql
-WHERE House = "Red" OR Year = 9
+WHERE Year = 10 AND House = "Red" AND Active = "Yes"
 ```
 
-**LIKE with wildcards (SQ2):** `LIKE` lets you match part of a string. The `%` wildcard means "any characters here". To find rows where a title *contains* a word, put `%` on both sides:
+**Numerical comparisons (SQ2):** Use `>`, `<`, `>=`, `<=` when comparing numbers. No quotes around the number:
 
 ```sql
-WHERE Title LIKE "%Python%"
+WHERE RoomType = "Deluxe" AND Nights > 3
 ```
 
-To find titles that *start* with a word, use `%` only at the end: `LIKE "Python%"`.
+Note: `"Deluxe"` needs quotes (it is a string), but `3` does not (it is a number).
 
-**COUNT aggregate (SQ3):** `COUNT(*)` counts the number of rows that match your `WHERE` clause. Give the result a name using `AS`:
+**Adding ORDER BY ASC (SQ3, SQ4):** Put ORDER BY at the very end of your query, after WHERE. The column you sort on does not have to be in your WHERE clause:
 
 ```sql
-SELECT COUNT(*) AS TotalScreenings
-FROM TblScreenings
-WHERE Hall = "A"
+SELECT RunnerName, Time
+FROM TblResults
+WHERE Event = "100m" AND Time < 14
+ORDER BY Time ASC;
 ```
 
-No `GROUP BY` is needed here — you are counting all matching rows, not grouping by category.
-
-**ORDER BY DESC (SQ4):** Works exactly like `ASC` but in reverse order. Put it after `WHERE`:
-
-```sql
-SELECT FullName, Score
-FROM TblApplicants
-WHERE Role = "Software Dev" AND Score >= 80
-ORDER BY Score DESC;
-```
+**Selecting specific columns (SQ2, SQ3, SQ4):** List column names separated by commas instead of using `*`. Match the column names exactly as they appear in the table — capitalisation matters.
 
 ## Common mistakes to avoid
 
-- Using `AND` when the question says `OR` — re-read the condition carefully.
-- Forgetting the `%` signs in a `LIKE` pattern, or putting them in the wrong place.
-- Forgetting the `AS` keyword when the question specifies an alias for your count.
-- Putting `ORDER BY` before `WHERE` in the query.
-- Omitting `DESC` when descending order is required — without it, results default to ascending.
+- Adding quotes around numbers in a comparison (`Nights > "3"` is wrong — use `Nights > 3`).
+- Forgetting to put quotes around string values (`House = Red` is wrong — use `House = "Red"`).
+- Putting ORDER BY before WHERE — the order must always be: SELECT → FROM → WHERE → ORDER BY.
+- Writing `=<` or `=>` — the correct forms are `<=` and `>=` (the equals sign always comes second).

@@ -1,25 +1,25 @@
--- Topic:  SQL SELECT with WHERE and LIKE
+-- Topic:  SQL SELECT with WHERE using AND and a numerical comparison
 -- Marks:  4
 --
--- A library stores book details in a database table called TblBooks.
+-- A hotel stores reservation details in a database table called TblReservations.
 --
--- TblBooks
--- +--------+-----------------------------+----------+-------+
--- | BookID | Title                       | Author   | Price |
--- +--------+-----------------------------+----------+-------+
--- | 1      | Python Programming           | A. Smith | 9.99  |
--- | 2      | Learn Python Fast            | B. Jones | 7.50  |
--- | 3      | Database Design             | C. Patel | 12.00 |
--- | 4      | Python for Data Science     | D. Lee   | 14.99 |
--- | 5      | Introduction to Algorithms  | E. Brown | 18.00 |
--- +--------+-----------------------------+----------+-------+
+-- TblReservations
+-- +-------+-------------+-----------+--------+
+-- | ResID | GuestName   | RoomType  | Nights |
+-- +-------+-------------+-----------+--------+
+-- | 1     | Anna Green  | Standard  | 2      |
+-- | 2     | Ben Hall    | Deluxe    | 5      |
+-- | 3     | Cara Irving | Standard  | 1      |
+-- | 4     | Dan Jones   | Deluxe    | 3      |
+-- | 5     | Eve King    | Suite     | 7      |
+-- | 6     | Fred Lee    | Deluxe    | 4      |
+-- +-------+-------------+-----------+--------+
 --
--- Write a SELECT statement to return only the Title and Author
--- from TblBooks where the Title contains the word "Python".
+-- Write a SELECT statement to return only the GuestName and Nights
+-- from TblReservations where RoomType is "Deluxe" AND Nights is greater than 3.
 --
 -- Expected output:
---   Python Programming      | A. Smith
---   Learn Python Fast       | B. Jones
---   Python for Data Science | D. Lee
+--   Ben Hall | 5
+--   Fred Lee | 4
 
 -- Write your SQL query below:

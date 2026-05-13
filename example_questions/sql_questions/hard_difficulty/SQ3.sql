@@ -1,29 +1,27 @@
--- Topic:  SQL SELECT with GROUP BY and HAVING
--- Marks:  6
+-- Topic:  SQL SELECT specific fields with WHERE, multiple conditions, and ORDER BY ASC
+-- Marks:  5
 --
--- A supermarket stores daily sales records in a database table called TblSales.
+-- A recruitment agency stores applicant records in a table called TblApplicants.
 --
--- TblSales
--- +--------+-------------+-------+-------+
--- | SaleID | ProductName | Store | Units |
--- +--------+-------------+-------+-------+
--- | 1      | Milk        | North | 50    |
--- | 2      | Bread       | South | 30    |
--- | 3      | Milk        | South | 40    |
--- | 4      | Eggs        | North | 20    |
--- | 5      | Bread       | North | 45    |
--- | 6      | Milk        | East  | 35    |
--- | 7      | Eggs        | South | 25    |
--- +--------+-------------+-------+-------+
+-- TblApplicants
+-- +------+---------------+------------------+-------+--------+-----------+
+-- | AID  | FullName      | Role             | Score | Stage  | Available |
+-- +------+---------------+------------------+-------+--------+-----------+
+-- | 1    | Grace Hill    | Software Dev     | 88    | Final  | Yes       |
+-- | 2    | Harry King    | Data Analyst     | 74    | Review | Yes       |
+-- | 3    | Isla Long     | Software Dev     | 91    | Final  | Yes       |
+-- | 4    | Jake Marsh    | Software Dev     | 65    | Review | No        |
+-- | 5    | Karen Noon    | Software Dev     | 82    | Final  | Yes       |
+-- | 6    | Leo Orr       | Data Analyst     | 90    | Final  | Yes       |
+-- +------+---------------+------------------+-------+--------+-----------+
 --
--- Write a SELECT statement to return each ProductName and the total units
--- sold across all stores.
--- Use TotalUnits as the alias for the sum.
--- Only include products where TotalUnits is greater than 60.
--- Order the results by TotalUnits in descending order.
+-- Write a SELECT statement to return only the FullName and Score
+-- from TblApplicants where Role is "Software Dev" AND Stage is "Final"
+-- AND Score is greater than or equal to 85 AND Available is "Yes",
+-- ordered by Score in ascending order.
 --
 -- Expected output (in order):
---   Milk  | 125
---   Bread | 75
+--   Grace Hill | 88
+--   Isla Long  | 91
 
 -- Write your SQL query below:

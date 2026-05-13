@@ -1,25 +1,28 @@
--- Topic:  SQL SELECT with COUNT aggregate
--- Marks:  5
+-- Topic:  SQL SELECT with WHERE AND and ORDER BY ASC
+-- Marks:  4
 --
--- A cinema stores screening details in a database table called TblScreenings.
+-- A sports club stores race results in a database table called TblResults.
 --
--- TblScreenings
--- +-------------+-----------------+------+----------+----------+
--- | ScreeningID | FilmTitle       | Hall | ShowTime | Capacity |
--- +-------------+-----------------+------+----------+----------+
--- | 1           | Space Adventure | A    | 14:00    | 120      |
--- | 2           | The Lost City   | B    | 14:30    | 80       |
--- | 3           | Space Adventure | B    | 17:00    | 80       |
--- | 4           | Night Patrol    | A    | 19:00    | 120      |
--- | 5           | The Lost City   | A    | 20:00    | 120      |
--- +-------------+-----------------+------+----------+----------+
+-- TblResults
+-- +----------+-------------+-------+------+
+-- | ResultID | RunnerName  | Event | Time |
+-- +----------+-------------+-------+------+
+-- | 1        | Alice Park  | 100m  | 13   |
+-- | 2        | Beth Quinn  | 200m  | 28   |
+-- | 3        | Cara Reed   | 100m  | 12   |
+-- | 4        | Dana Shaw   | 100m  | 14   |
+-- | 5        | Eva Todd    | 200m  | 27   |
+-- | 6        | Fran Upton  | 100m  | 11   |
+-- +----------+-------------+-------+------+
+-- Time is stored in seconds.
 --
--- Write a SELECT statement to return the total number of screenings
--- in Hall "A".
--- Use TotalScreenings as the alias for your count.
+-- Write a SELECT statement to return only the RunnerName and Time
+-- from TblResults where Event is "100m" AND Time is less than 14,
+-- ordered by Time in ascending order.
 --
--- Expected output:
---   TotalScreenings
---   3
+-- Expected output (in order):
+--   Fran Upton | 11
+--   Cara Reed  | 12
+--   Alice Park | 13
 
 -- Write your SQL query below:
