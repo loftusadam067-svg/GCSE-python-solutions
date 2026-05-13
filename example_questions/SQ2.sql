@@ -1,0 +1,24 @@
+-- Topic:  SQL SELECT with WHERE and AND (two conditions, specific fields)
+-- Marks:  4
+--
+-- An online shop stores order details in a database table called TblOrders.
+--
+-- TblOrders
+-- +---------+--------------+-------+------------+
+-- | OrderID | CustomerName | Total | Status     |
+-- +---------+--------------+-------+------------+
+-- | 101     | Alice Brown  | 150   | Dispatched |
+-- | 102     | Ben Clarke   | 45    | Dispatched |
+-- | 103     | Alice Brown  | 200   | Pending    |
+-- | 104     | Dan Evans    | 120   | Dispatched |
+-- | 105     | Eve Ford     | 80    | Pending    |
+-- +---------+--------------+-------+------------+
+--
+-- Write a SELECT statement to return only the OrderID and CustomerName
+-- from TblOrders where Total is greater than 100 AND Status is "Dispatched".
+--
+-- Expected output:
+--   101 | Alice Brown
+--   104 | Dan Evans
+
+-- Write your SQL query below:

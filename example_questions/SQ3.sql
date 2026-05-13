@@ -1,0 +1,27 @@
+-- Topic:  SQL SELECT with WHERE, AND, and ORDER BY
+-- Marks:  4
+--
+-- A bookshop stores product details in a database table called TblProducts.
+--
+-- TblProducts
+-- +-----------+-------------------------+----------+-------+
+-- | ProductID | ProductName             | Category | Price |
+-- +-----------+-------------------------+----------+-------+
+-- | 1         | Python for Beginners    | Books    | 8.99  |
+-- | 2         | Wireless Keyboard       | Tech     | 24.99 |
+-- | 3         | Learn SQL in 24 Hours   | Books    | 6.50  |
+-- | 4         | Introduction to CS      | Books    | 12.00 |
+-- | 5         | USB Hub                 | Tech     | 9.99  |
+-- | 6         | Data Structures Guide   | Books    | 7.75  |
+-- +-----------+-------------------------+----------+-------+
+--
+-- Write a SELECT statement to return only the ProductName and Price
+-- from TblProducts where Category is "Books" AND Price is less than 10,
+-- ordered by Price in ascending order.
+--
+-- Expected output (in order):
+--   Learn SQL in 24 Hours  | 6.50
+--   Data Structures Guide  | 7.75
+--   Python for Beginners   | 8.99
+
+-- Write your SQL query below:
